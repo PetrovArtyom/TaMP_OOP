@@ -38,7 +38,6 @@ namespace simple_wisdom {
 		cout << "Количество элементов в контейнере: " << len << endl << endl;
 		for (int i = 0; i < len; i++)
 		{
-			ofst << i + 1 << ": ";
 			cont[i]->Out(ofst);
 		}
 	}
