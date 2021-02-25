@@ -40,6 +40,7 @@ namespace simple_wisdom {
 		{
 			ofst << i + 1 << ": ";
 			cont[i]->Out(ofst);
+			ofst << "Знаков препинания: " << cont[i]->marks_number() << endl << endl;
 		}
 	}
 }
