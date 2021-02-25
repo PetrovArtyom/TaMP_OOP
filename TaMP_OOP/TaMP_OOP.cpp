@@ -1,6 +1,7 @@
 ﻿// TaMP_OOP.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+#include <ctime>
 #include <iostream>
 #include <fstream>
 #include "container_atd.h"
@@ -8,6 +9,7 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
+	srand(time(NULL));
 	setlocale(LC_ALL, "rus");
 
 	if (argc != 3)

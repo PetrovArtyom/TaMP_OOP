@@ -12,6 +12,6 @@ namespace simple_wisdom
 	// Вывод параметров пословиц
 	void proverb::Out(ofstream& ofst)
 	{
-		ofst << "Пословица: " << content << endl << "Страна: " << country << endl;
+		ofst << "Пословица: " << content << endl << "Страна: " << country << endl << "Оценка: " << mark << endl << endl;
 	}
 }
