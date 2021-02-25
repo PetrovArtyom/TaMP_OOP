@@ -3,6 +3,8 @@
 // геометрических фигурах
 #include "proverb_atd.h"
 #include "aphorism_atd.h"
+#include "riddle_atd.h"
+
 using namespace std;
 namespace simple_wisdom
 {
@@ -21,6 +23,9 @@ namespace simple_wisdom
 			break;
 		case 2:
 			wd = new aphorism;
+			break;
+		case 3:
+			wd = new riddle;
 			break;
 		default:
 			return 0;
