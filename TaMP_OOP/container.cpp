@@ -1,6 +1,7 @@
 #include "container_atd.h"
 #include <iostream>
-namespace simple_wisdom {
+namespace simple_wisdom 
+{
 	// Инициализация контейнера
 	container::container() : len(0) { }
 	// Очистка контейнера от элементов
@@ -16,10 +17,11 @@ namespace simple_wisdom {
 	{
 		while (!ifst.eof())
 		{
-			if (len < max_len)
+			if (len < max_len)                         // если массив не переполнен
 			{
 				if ((cont[len] = wisdom::In(ifst)) != 0)
 				{
+					positions[len] = len;
 					len++;
 				}
 			}
@@ -39,8 +41,43 @@ namespace simple_wisdom {
 		for (int i = 0; i < len; i++)
 		{
 			ofst << i + 1 << ": ";
-			cont[i]->Out(ofst);
-			ofst << "Знаков препинания: " << cont[i]->marks_number() << endl << endl;
+			cont[positions[i]]->Out(ofst);
+			//cont[i]->Out(ofst);
+			ofst << "Знаков препинания: " << cont[positions[i]]->marks_number() << endl << endl;
 		}
+	}
+
+	//  Сортировка контейнера
+	void container::Sort()
+	{
+		for (int i = 0; i < len; i++)
+		{
+			mark_nums[i] = cont[i]->marks_number();
+		}
+
+		bool was_change = false;
+
+		do
+		{
+			was_change = false;
+
+			for (int i = 0; i < len - 1; i++)
+			{
+				if (mark_nums[i] > mark_nums[i + 1])
+				{
+					int tmp = mark_nums[i];
+					mark_nums[i] = mark_nums[i + 1];
+					mark_nums[i + 1] = tmp;
+
+					tmp = positions[i];
+					positions[i] = positions[i + 1];
+					positions[i + 1] = tmp;
+
+					was_change = true;
+				}
+			}
+
+		} while (was_change);
+
 	}
 }
