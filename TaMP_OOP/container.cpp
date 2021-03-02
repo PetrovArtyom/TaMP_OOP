@@ -42,7 +42,6 @@ namespace simple_wisdom
 		{
 			ofst << i + 1 << ": ";
 			cont[positions[i]]->Out(ofst);
-			//cont[i]->Out(ofst);
 			ofst << "Знаков препинания: " << cont[positions[i]]->marks_number() << endl << endl;
 		}
 	}

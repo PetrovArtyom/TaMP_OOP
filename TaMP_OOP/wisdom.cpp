@@ -28,13 +28,4 @@ namespace simple_wisdom
 		wd->InData(ifst);
 		return wd;
 	}
-	/*
-	// ѕерегрузка оператора присваивани€
-	wisdom& operator= (const wisdom& wisd)
-	{
-		content = wisd.content;
-
-		// ¬озвращаем текущий объект, чтобы иметь возможность св€зать в цепочку выполнение нескольких операций присваивани€
-		return *this;
-	}*/	
 }
