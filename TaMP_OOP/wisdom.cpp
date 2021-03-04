@@ -28,4 +28,9 @@ namespace simple_wisdom
 		wd->InData(ifst);
 		return wd;
 	}
+
+	bool wisdom::compare(wisdom* a)
+	{
+		return marks_number() > a->marks_number();
+	}
 }

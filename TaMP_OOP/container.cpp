@@ -53,7 +53,7 @@ namespace simple_wisdom
 
 			for (int j = i + 1; j < len; j++)
 			{
-				if (cont[i]->marks_number() > cont[j]->marks_number())
+				if (cont[i]->compare(cont[j]))
 				{
 					wisdom* tmp = cont[i];
 					cont[i] = cont[j];
