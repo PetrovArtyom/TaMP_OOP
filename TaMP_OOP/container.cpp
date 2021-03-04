@@ -41,4 +41,15 @@ namespace simple_wisdom {
 			cont[i]->Out(ofst);
 		}
 	}
+
+	// Фильтрованный вывод содержимого контейнера
+	void container::Out_proverb(ofstream& ofst)
+	{
+		ofst << "Количество элементов в контейнере: " << len << endl << endl;
+		cout << "Количество элементов в контейнере: " << len << endl << endl;
+		for (int i = 0; i < len; i++)
+		{
+			cont[i]->Out_proverb(ofst);
+		}
+	}
 }

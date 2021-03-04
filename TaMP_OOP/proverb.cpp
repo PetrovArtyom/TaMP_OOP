@@ -14,4 +14,9 @@ namespace simple_wisdom
 	{
 		ofst << "Пословица: " << content << endl << "Страна: " << country << endl << endl;
 	}
+
+	void proverb::Out_proverb(ofstream& ofst)
+	{
+		ofst << "Пословица: " << content << endl << "Страна: " << country << endl << endl;
+	}
 }

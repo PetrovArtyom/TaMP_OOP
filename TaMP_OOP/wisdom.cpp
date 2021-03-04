@@ -28,4 +28,9 @@ namespace simple_wisdom
 		wd->InData(ifst);
 		return wd;
 	}
+
+	void wisdom::Out_proverb(ofstream& ofst)
+	{
+		;
+	}
 }
