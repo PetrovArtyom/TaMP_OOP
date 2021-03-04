@@ -12,7 +12,6 @@ namespace simple_wisdom
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
-		int marks_number();   // подсчёт знаков препинания
 		aphorism() {} // создание без инициализации.
 	};
 }
