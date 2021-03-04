@@ -44,39 +44,5 @@ namespace simple_wisdom
 			cont[positions[i]]->Out(ofst);
 			ofst << "Знаков препинания: " << cont[positions[i]]->marks_number() << endl << endl;
 		}
-	}
-
-	//  Сортировка контейнера
-	void container::Sort()
-	{
-		for (int i = 0; i < len; i++)
-		{
-			mark_nums[i] = cont[i]->marks_number();
-		}
-
-		bool was_change = false;
-
-		do
-		{
-			was_change = false;
-
-			for (int i = 0; i < len - 1; i++)
-			{
-				if (mark_nums[i] > mark_nums[i + 1])
-				{
-					int tmp = mark_nums[i];
-					mark_nums[i] = mark_nums[i + 1];
-					mark_nums[i + 1] = tmp;
-
-					tmp = positions[i];
-					positions[i] = positions[i + 1];
-					positions[i + 1] = tmp;
-
-					was_change = true;
-				}
-			}
-
-		} while (was_change);
-
-	}
+	}	
 }

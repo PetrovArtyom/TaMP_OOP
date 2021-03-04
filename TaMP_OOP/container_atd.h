@@ -16,7 +16,6 @@ namespace simple_wisdom {
 		void In(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		void Clear(); // очистка контейнера
-		void Sort();  //сортировка контейнера
 		container(); // инициализация контейнера
 		~container() { Clear(); } // утилизация контейнера
 	};
