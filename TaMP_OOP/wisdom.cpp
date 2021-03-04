@@ -16,16 +16,24 @@ namespace simple_wisdom
 		{
 		case 1:
 			wd = new proverb;
-			wd->mark = rand() % 10;
 			break;
 		case 2:
 			wd = new aphorism;
-			wd->mark = rand() % 10;
 			break;
 		default:
 			return 0;
 		}
+
+		ifst.getline(wd->content, 200);
+		ifst >> k;
+		ifst.get(tmp);
+		wd->mark = k;
 		wd->InData(ifst);
 		return wd;
+	}
+
+	void wisdom::Out(ofstream& ofst)
+	{
+		ofst << content << endl << "ќценка: " << mark << endl << endl;
 	}
 }

@@ -13,7 +13,7 @@ namespace simple_wisdom
 		// иденитфикация, порождение и ввод мудрости из потока
 		static wisdom* In(ifstream& ifst);
 		virtual void InData(ifstream& ifst) = 0; // ввод
-		virtual void Out(ofstream& ofst) = 0; // вывод
+		virtual void Out(ofstream& ofst); // вывод
 	};
 }
 #endif
