@@ -1,6 +1,7 @@
 #include "container_atd.h"
 #include <iostream>
-namespace simple_wisdom {
+namespace simple_wisdom 
+{
 	// Инициализация контейнера
 	container::container() : len(0) { }
 	// Очистка контейнера от элементов
