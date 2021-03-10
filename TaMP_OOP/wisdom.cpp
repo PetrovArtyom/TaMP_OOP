@@ -66,4 +66,9 @@ namespace simple_wisdom
 	{
 		return marks_number() > a->marks_number();
 	}
+
+	void wisdom::Out_proverb(ofstream& ofst)
+	{
+		;
+	}
 }

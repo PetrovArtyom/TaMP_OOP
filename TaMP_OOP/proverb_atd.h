@@ -13,6 +13,7 @@ namespace simple_wisdom
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
+		void Out_proverb(ofstream& ofst);
 		proverb() {} // создание без инициализации.
 	};
 }

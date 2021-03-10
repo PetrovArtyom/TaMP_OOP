@@ -13,9 +13,10 @@ namespace simple_wisdom
 	public:
 		void In(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
+		void Out_proverb(ofstream& ofst);       // фильтрованный вывод
+		container(); // инициализация контейнера
 		void Clear(); // очистка контейнера
 		void Sort();  // сортировка контейнера
-		container();  // инициализация контейнера
 		~container() { Clear(); } // утилизация контейнера
 	};
 }

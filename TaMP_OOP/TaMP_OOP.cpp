@@ -29,9 +29,9 @@ int main(int argc, char* argv[])
 	c.Sort();
 	ofst << "Контейнер отсортирован" << endl << endl;
 	cout << "Контейнер отсортирован" << endl << endl;
-	c.Out(ofst);
+	c.Out_proverb(ofst);
 	c.Clear();
-	ofst << endl << "Контейнер пуст" << endl << endl;
+	ofst << "Контейнер пуст" << endl << endl;
 	cout << "Контейнер пуст" << endl << endl;
 	c.Out(ofst);
 	cout << "Конец выполнения программы" << endl;

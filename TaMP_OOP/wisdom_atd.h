@@ -14,7 +14,7 @@ namespace simple_wisdom
 		static wisdom* In(ifstream& ifst);
 		virtual void InData(ifstream& ifst) = 0; // ввод
 		virtual void Out(ofstream& ofst); // вывод
-
+		virtual void Out_proverb(ofstream& ofst);
 		bool compare(wisdom* a);
 		int marks_number();   // подсчёт знаков препинания
 	};

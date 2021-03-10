@@ -14,4 +14,10 @@ namespace simple_wisdom
 		ofst << "Автор: " << country << endl << "Пословица: ";
 		wisdom::Out(ofst);
 	}
+
+	void proverb::Out_proverb(ofstream& ofst)
+	{
+		ofst << "Пословица: " << content << endl << "Страна: " << country << endl;
+		ofst << "Знаков препинания: " << marks_number() << endl << endl;
+	}
 }

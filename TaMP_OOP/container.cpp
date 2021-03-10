@@ -39,7 +39,6 @@ namespace simple_wisdom
 		cout << "Количество элементов в контейнере: " << len << endl << endl;
 		for (int i = 0; i < len; i++)
 		{
-			ofst << i + 1 << ": ";
 			cont[i]->Out(ofst);
 			ofst << "Знаков препинания: " << cont[i]->marks_number() << endl << endl;
 		}
@@ -61,6 +60,17 @@ namespace simple_wisdom
 					tmp = NULL;
 				}
 			}
+		}
+	}
+
+	// Фильтрованный вывод содержимого контейнера
+	void container::Out_proverb(ofstream& ofst)
+	{
+		ofst << "Количество элементов в контейнере: " << len << endl << endl;
+		cout << "Количество элементов в контейнере: " << len << endl << endl;
+		for (int i = 0; i < len; i++)
+		{
+			cont[i]->Out_proverb(ofst);
 		}
 	}
 }
