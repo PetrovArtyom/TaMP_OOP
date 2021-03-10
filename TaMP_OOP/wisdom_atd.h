@@ -15,6 +15,7 @@ namespace simple_wisdom
 		virtual void InData(ifstream& ifst) = 0; // ввод
 		virtual void Out(ofstream& ofst); // вывод
 
+		bool compare(wisdom* a);
 		int marks_number();   // подсчёт знаков препинания
 	};
 }

@@ -10,14 +10,12 @@ namespace simple_wisdom
 		int len; // текущая длина
 		wisdom* cont[max_len];
 
-		int positions[max_len];
-		int mark_nums[max_len];
-
 	public:
 		void In(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		void Clear(); // очистка контейнера
-		container(); // инициализация контейнера
+		void Sort();  // сортировка контейнера
+		container();  // инициализация контейнера
 		~container() { Clear(); } // утилизация контейнера
 	};
 }

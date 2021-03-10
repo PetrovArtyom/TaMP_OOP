@@ -61,4 +61,9 @@ namespace simple_wisdom
 	{
 		ofst << content << endl << "ќценка: " << mark << endl;
 	}
+
+	bool wisdom::compare(wisdom* a)
+	{
+		return marks_number() > a->marks_number();
+	}
 }
