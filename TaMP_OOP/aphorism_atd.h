@@ -8,6 +8,7 @@ namespace simple_wisdom
 	class aphorism : public wisdom
 	{
 		char author[50];
+
 	public:
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод

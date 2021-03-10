@@ -5,13 +5,13 @@ namespace simple_wisdom
 	//Ввод параметров загадки
 	void riddle::InData(ifstream& ifst)
 	{
-		ifst.getline(content, 200);
 		ifst.getline(answer, 50);
 	}
 
-	//Вывод параметров афоризма
+	// Вывод параметров загадки
 	void riddle::Out(ofstream& ofst)
 	{
-		ofst << "Загадка: " << content << endl << "Ответ: " << answer << endl << endl;
+		ofst << "Ответ: " << answer << endl << "Загадка: ";
+		wisdom::Out(ofst);
 	}
 }

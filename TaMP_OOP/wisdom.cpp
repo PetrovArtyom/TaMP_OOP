@@ -1,6 +1,4 @@
 #include "wisdom_atd.h"
-// Необходима подключить информацию обо всех имеющихся
-// геометрических фигурах
 #include "proverb_atd.h"
 #include "aphorism_atd.h"
 #include "riddle_atd.h"
@@ -8,7 +6,7 @@
 using namespace std;
 namespace simple_wisdom
 {
-	// Ввод параметров обобщенной фигуры
+	// Ввод параметров обобщенной мудрости
 	wisdom* wisdom::In(ifstream& ifst)
 	{
 		wisdom* wd;
@@ -30,7 +28,17 @@ namespace simple_wisdom
 		default:
 			return 0;
 		}
+
+		ifst.getline(wd->content, 200);
+		ifst >> k;
+		ifst.get(tmp);
+		wd->mark = k;
 		wd->InData(ifst);
 		return wd;
+	}
+
+	void wisdom::Out(ofstream& ofst)
+	{
+		ofst << content << endl << "Оценка: " << mark << endl << endl;
 	}
 }
