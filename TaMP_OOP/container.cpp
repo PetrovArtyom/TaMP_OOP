@@ -17,10 +17,11 @@ namespace simple_wisdom
 	{
 		while (!ifst.eof())
 		{
-			if (len < max_len)
+			if (len < max_len)                         // если массив не переполнен
 			{
 				if ((cont[len] = wisdom::In(ifst)) != 0)
 				{
+					positions[len] = len;
 					len++;
 				}
 			}
@@ -40,7 +41,8 @@ namespace simple_wisdom
 		for (int i = 0; i < len; i++)
 		{
 			ofst << i + 1 << ": ";
-			cont[i]->Out(ofst);
+			cont[positions[i]]->Out(ofst);
+			ofst << "Знаков препинания: " << cont[positions[i]]->marks_number() << endl << endl;
 		}
-	}
+	}	
 }

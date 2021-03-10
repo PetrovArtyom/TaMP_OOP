@@ -26,6 +26,8 @@ int main(int argc, char* argv[])
 	c.In(ifst);
 	ofst << "Контейнер заполнен" << endl << endl;
 	cout << "Контейнер заполнен" << endl << endl;
+	ofst << "Контейнер отсортирован" << endl << endl;
+	cout << "Контейнер отсортирован" << endl << endl;
 	c.Out(ofst);
 	c.Clear();
 	ofst << endl << "Контейнер пуст" << endl << endl;
