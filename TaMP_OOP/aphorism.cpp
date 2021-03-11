@@ -11,6 +11,7 @@ namespace simple_wisdom
 	//Вывод параметров афоризма
 	void aphorism::Out(ofstream& ofst)
 	{
-
+		ofst << "Автор: " << author << endl << "Пословица: ";
+		wisdom::Out(ofst);
 	}
 }
