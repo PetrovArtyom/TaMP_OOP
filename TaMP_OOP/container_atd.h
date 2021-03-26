@@ -7,10 +7,10 @@ namespace simple_wisdom
 	class container 
 	{
 		enum { max_len = 100 }; // максимальная длина
-		int len; // текущая длина
 		wisdom* cont[max_len];
 
 	public:
+		int len; // текущая длина
 		void In(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		void Out_proverb(ofstream& ofst);       // фильтрованный вывод

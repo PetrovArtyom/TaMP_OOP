@@ -17,7 +17,6 @@ namespace simple_wisdom
 
 	void proverb::Out_proverb(ofstream& ofst)
 	{
-		ofst << "Пословица: " << content << endl << "Страна: " << country << endl;
-		ofst << "Знаков препинания: " << marks_number() << endl << endl;
+		ofst << "Страна: " << country << endl << "Пословица: " << content << endl << "Оценка: " << mark << endl << "Знаков препинания: " << marks_number() << endl << endl;
 	}
 }

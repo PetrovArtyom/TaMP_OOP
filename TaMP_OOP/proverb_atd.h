@@ -7,9 +7,8 @@ namespace simple_wisdom
 	// пословица
 	class proverb : public wisdom
 	{
-		char country[50];
-
 	public:
+		char country[50];
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод

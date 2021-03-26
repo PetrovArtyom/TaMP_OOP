@@ -28,6 +28,7 @@ namespace simple_wisdom
 			{
 				cout << "Массив переполнен. Считано " << max_len << " элементов" << endl;
 				ifst.close();
+				break;
 			}
 		}
 	}

@@ -11,7 +11,7 @@ namespace simple_wisdom
 	// Вывод параметров загадки
 	void riddle::Out(ofstream& ofst)
 	{
-		ofst << "Ответ: " << answer << endl << "Пословица: ";
+		ofst << "Ответ: " << answer << endl << "Загадка: ";
 		wisdom::Out(ofst);
 	}
 }

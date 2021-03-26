@@ -7,9 +7,8 @@ namespace simple_wisdom
 	// загадка
 	class riddle : public wisdom
 	{
-		char answer[50];
-
 	public:
+		char answer[50];
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
