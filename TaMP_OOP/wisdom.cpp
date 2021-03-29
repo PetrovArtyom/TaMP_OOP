@@ -2,6 +2,7 @@
 #include "proverb_atd.h"
 #include "aphorism_atd.h"
 #include "riddle_atd.h"
+#include <iostream>
 
 using namespace std;
 namespace simple_wisdom
@@ -10,11 +11,22 @@ namespace simple_wisdom
 	wisdom* wisdom::In(ifstream& ifst)
 	{
 		wisdom* wd;
-		int k;
+		char k;
 		ifst >> k;
+		if ((int)k > 57 || (int)k < 48)			// Проверяем, что считанный символ - цифра от 0 до 9
+		{
+			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
+			return 0;
+		}
+
+		// Переводим char в int
+		int wd_type = (int)k - 48;				
+												
+		// Читаем оставшийся \n
 		char tmp;
 		ifst.get(tmp);
-		switch (k)
+
+		switch (wd_type)
 		{
 		case 1:
 			wd = new proverb;
@@ -26,14 +38,48 @@ namespace simple_wisdom
 			wd = new riddle;
 			break;
 		default:
+			cout << endl << "Error! Invalid wisdom type entered. Please check input file.";
 			return 0;
 		}
 
 		ifst.getline(wd->content, 200);
-		ifst >> k;
+
+		if (wd->content[0] == '\0')
+		{
+			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
+			return 0;
+		}
+		
+		// Читаем строку, предназначенную для оценки
+		char str[4];
+		ifst.getline(str, 4);
+
+		// Проверяем, что все символы строки - цифры
+		int count = 0;
+		while (str[count] != '\n' && str[count] != '\0' && count < 4)
+		{
+			if ((int)str[count] > 57 || (int)str[count] < 48)
+			{
+				cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
+				return 0;
+			}
+			count++;
+		}
+
+		if (count == 0)
+		{
+			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
+			return 0;
+		}
+
+		// Переводим строку в int 
+		int mark = atoi(str);
 		ifst.get(tmp);
-		wd->mark = k;
-		wd->InData(ifst);
+		wd->mark = mark;
+		if (wd->InData(ifst) == 1)
+		{
+			return 0;
+		}
 		return wd;
 	}
 

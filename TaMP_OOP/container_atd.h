@@ -11,7 +11,7 @@ namespace simple_wisdom
 
 	public:
 		int len; // текущая длина
-		void In(ifstream& ifst); // ввод
+		int In(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		void Out_proverb(ofstream& ofst);       // фильтрованный вывод
 		container(); // инициализация контейнера

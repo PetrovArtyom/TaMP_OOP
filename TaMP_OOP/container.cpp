@@ -13,7 +13,7 @@ namespace simple_wisdom
 	}
 
 	// Ввод содержимого контейнера
-	void container::In(ifstream& ifst)
+	int container::In(ifstream& ifst)
 	{
 		while (!ifst.eof())
 		{
@@ -23,6 +23,10 @@ namespace simple_wisdom
 				{
 					len++;
 				}
+				else
+				{
+					return 1;
+				}
 			}
 			else
 			{
@@ -31,6 +35,7 @@ namespace simple_wisdom
 				break;
 			}
 		}
+		return 0;
 	}
 
 	// Вывод содержимого контейнера

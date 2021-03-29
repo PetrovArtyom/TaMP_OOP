@@ -10,7 +10,7 @@ namespace simple_wisdom
 	public:
 		char answer[50];
 		// переопределяем интерфейс класса
-		void InData(ifstream& ifst); // ввод
+		int InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		riddle() {} // создание без инициализации.
 	};

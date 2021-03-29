@@ -10,7 +10,7 @@ namespace simple_wisdom
 	public:
 		char country[50];
 		// переопределяем интерфейс класса
-		void InData(ifstream& ifst); // ввод
+		int InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		void Out_proverb(ofstream& ofst);
 		proverb() {} // создание без инициализации.

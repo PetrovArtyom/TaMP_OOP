@@ -14,16 +14,19 @@ int main(int argc, char* argv[])
 
 	if (argc != 3)
 	{
-		cout << "incorrect command line! "
-			"Waited: command in_file out_file"
-			<< endl;
-		exit(1);
+		cout << "incorrect command line! " "Waited: command in_file out_file" << endl;
+		system("pause");
+		return 0;
 	}
 	ifstream ifst(argv[1]);
 	ofstream ofst(argv[2]);
 	cout << "Начало выполнения ООП" << endl;
 	simple_wisdom::container c;
-	c.In(ifst);
+
+	if (int check = c.In(ifst) == 1)
+	{
+		return 0;
+	}
 	ofst << "Контейнер заполнен" << endl << endl;
 	cout << "Контейнер заполнен" << endl << endl;
 	ofst << "Стандартный вывод" << endl << endl;
