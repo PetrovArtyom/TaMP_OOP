@@ -1,22 +1,28 @@
 #ifndef __wisdom_atd__
 #define __wisdom_atd__
+
 #include <fstream>
+
 using namespace std;
 namespace simple_wisdom
 {
+	// Определение родительского класса - мудрость
 	class wisdom
 	{
 	public:
+		// Строка для хранения содержания мудрости
 		char content[200];
+
+		// Переменная для хранения субъективной оценки
 		int mark = 0;
 
-		// иденитфикация, порождение и ввод мудрости из потока
+		// Объявление методов класса
 		static wisdom* In(ifstream& ifst);
-		virtual int InData(ifstream& ifst) = 0; // ввод
-		virtual void Out(ofstream& ofst); // вывод
+		virtual int InData(ifstream& ifst) = 0; 
+		virtual void Out(ofstream& ofst); 
 		virtual void Out_proverb(ofstream& ofst);
-		bool compare(wisdom* a);
-		int marks_number();   // подсчёт знаков препинания
+		bool Compare(wisdom* a);
+		int Marks_number();   
 	};
 }
 #endif

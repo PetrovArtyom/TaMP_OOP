@@ -9,42 +9,63 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
+	// Инициализация рандомайзера
 	srand(time(NULL));
+
+	// Установка русского языка
 	setlocale(LC_ALL, "rus");
 
+	// Проверка на запуск программы с тремя параметрами
 	if (argc != 3)
 	{
 		cout << "incorrect command line! " "Waited: command in_file out_file" << endl;
 		system("pause");
 		return 0;
 	}
+
+	// Открытие потоков во входной и выходной файл
 	ifstream ifst(argv[1]);
 	ofstream ofst(argv[2]);
+
+	// Вывод сообщения о начале работы
 	cout << "Начало выполнения ООП" << endl;
+
+	// Создание контейнера
 	simple_wisdom::container c;
 
+	// Проверка успешного заполнения контейнера
 	if (int check = c.In(ifst) == 1)
 	{
 		return 0;
 	}
+
+	// Вывод сообщений о заполнении контейнера и вывод контейнера
 	ofst << "Контейнер заполнен" << endl << endl;
 	cout << "Контейнер заполнен" << endl << endl;
 	ofst << "Стандартный вывод" << endl << endl;
 	cout << "Стандартный вывод" << endl << endl;
 	c.Out(ofst);
+
+	// Сортировка контейнера, вывод сообщений о сортировке и выввод контейнера
 	c.Sort();
 	ofst << "Контейнер отсортирован" << endl << endl;
 	cout << "Контейнер отсортирован" << endl << endl;
 	ofst << "Отсортированный вывод" << endl << endl;
 	cout << "Отсортированный вывод" << endl << endl;
 	c.Out(ofst);
+
+	// Вывод фильтрованного контейнера
 	ofst << "Фильтрованный вывод" << endl << endl;
 	cout << "Фильтрованный вывод" << endl << endl;
 	c.Out_proverb(ofst);
+
+	// Очистка контейнера и вывод пустого контейнера
 	c.Clear();
 	ofst << "Контейнер пуст" << endl << endl;
 	cout << "Контейнер пуст" << endl << endl;
 	c.Out(ofst);
+
+	// Вывод сообщения о завершении работы программы и завершение работы программы
 	cout << "Конец выполнения программы" << endl;
 	return 0;
 }

@@ -7,25 +7,31 @@
 using namespace std;
 namespace simple_wisdom
 {
-	// Ввод параметров обобщенной мудрости
+	// Ввод параметров обобщенной мудрости из потока
 	wisdom* wisdom::In(ifstream& ifst)
 	{
+		// Объявление указателя на мудрость
 		wisdom* wd;
+
+		// Считывание типа мудрости
 		char k;
 		ifst >> k;
-		if ((int)k > 57 || (int)k < 48)			// Проверяем, что считанный символ - цифра от 0 до 9
+
+		// Проверка символа на принадлежность к цифрам
+		if ((int)k > 57 || (int)k < 48)			
 		{
 			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
 			return 0;
 		}
 
-		// Переводим char в int
+		// Конвертирование char в int
 		int wd_type = (int)k - 48;				
 												
-		// Читаем оставшийся \n
+		// Считывание оставшегося символа \n
 		char tmp;
 		ifst.get(tmp);
 
+		// Создание объекта соответствующего типа
 		switch (wd_type)
 		{
 		case 1:
@@ -42,19 +48,21 @@ namespace simple_wisdom
 			return 0;
 		}
 
+		// Ввод первого общего параметра мудрости - содержания
 		ifst.getline(wd->content, 200);
 
+		//Проверка непустоты строки
 		if (wd->content[0] == '\0')
 		{
 			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
 			return 0;
 		}
 		
-		// Читаем строку, предназначенную для оценки
+		// Ввод второго общего параметра мудрости - оценки
 		char str[4];
 		ifst.getline(str, 4);
 
-		// Проверяем, что все символы строки - цифры
+		// Проверка того, что оценка является числом
 		int count = 0;
 		while (str[count] != '\n' && str[count] != '\0' && count < 4)
 		{
@@ -66,16 +74,22 @@ namespace simple_wisdom
 			count++;
 		}
 
+		// Проверка на невведение второго общего параметра - оценки
 		if (count == 0)
 		{
 			cout << endl << "Error! Incorrect input of wisdom type. Please check input file." << endl;
 			return 0;
 		}
 
-		// Переводим строку в int 
+		// Конвертация строки в число 
 		int mark = atoi(str);
+
 		ifst.get(tmp);
+
+		// Запись проверенной оценки в соответствующее поле объекта
 		wd->mark = mark;
+		
+		// Проверка успешности ввода индивидуального параметра
 		if (wd->InData(ifst) == 1)
 		{
 			return 0;
@@ -83,12 +97,19 @@ namespace simple_wisdom
 		return wd;
 	}
 
-	int wisdom::marks_number()
+	//   Вычисление количества знаков препинания
+	int wisdom::Marks_number()
 	{
+		// Число знаков препинания
 		int marks_num = 0;
+
+		// Учитываемые знаки
 		char marks[] = { '.', ',', '!', '?', '-', ';', ':' };
+
+		// Длина массива учитываемых знаков
 		int marks_len = 7;
 
+		// Цикл подсчёта
 		for (int i = 0; i < strlen(content); i++)
 		{
 			for (int j = 0; j < 7; j++)
@@ -103,18 +124,21 @@ namespace simple_wisdom
 		return marks_num;
 	}
 
+	// Вывод параметров текущей мудрости в поток
 	void wisdom::Out(ofstream& ofst)
 	{
 		ofst << content << endl << "Оценка: " << mark << endl;
 	}
 
-	bool wisdom::compare(wisdom* a)
-	{
-		return marks_number() > a->marks_number();
-	}
-
+	// Фильтрованный вывод параметров текущей мудрости в поток
 	void wisdom::Out_proverb(ofstream& ofst)
 	{
 		;
+	}
+
+	// Сравнение полей "оценка" двух объектов
+	bool wisdom::Compare(wisdom* a)
+	{
+		return Marks_number() > a->Marks_number();
 	}
 }

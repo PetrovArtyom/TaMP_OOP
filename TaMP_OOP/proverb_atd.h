@@ -1,19 +1,33 @@
 #ifndef __proverb_atd__
 #define __proverb_atd__
-// Требеутся описание класса shape
+
 #include "wisdom_atd.h"
+
 namespace simple_wisdom
 {
-	// пословица
+	// Определение дочернего класса - пословица
 	class proverb : public wisdom
 	{
 	public:
+		// Строка для хранения страны
 		char country[50];
-		// переопределяем интерфейс класса
-		int InData(ifstream& ifst); // ввод
-		void Out(ofstream& ofst); // вывод
+
+		// Переопределение интерфейса класса
+
+		// Ввод
+		int InData(ifstream& ifst);
+		
+		// Вывод
+		void Out(ofstream& ofst);
+		
+		// Фильтрованный вывод
 		void Out_proverb(ofstream& ofst);
-		proverb() {} // создание без инициализации.
+		
+		// Создание без инициализации
+		proverb() 
+		{
+		
+		}
 	};
 }
 #endif

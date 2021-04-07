@@ -19,14 +19,14 @@ namespace simple_wisdom
 		return 0;
 	}
 
-	// Вывод параметров пословицы
+	// Вывод параметров пословицы в поток
 	void proverb::Out(ofstream& ofst)
 	{
 		ofst << "Страна: " << country << endl << "Пословица: ";
 		wisdom::Out(ofst);
 	}
 
-	// Фильтрованный вывод пословицы
+	// Фильтрованный вывод пословицы в поток
 	void proverb::Out_proverb(ofstream& ofst)
 	{
 		ofst << "Страна: " << country << endl << "Пословица: " << content << endl << "Оценка: " << mark << endl << "Знаков препинания: " << marks_number() << endl << endl;

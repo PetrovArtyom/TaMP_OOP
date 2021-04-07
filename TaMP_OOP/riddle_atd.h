@@ -1,18 +1,30 @@
 #ifndef __riddle_atd__
 #define __riddle_atd__
-// Требуется описание класса wisdom
+
 #include "wisdom_atd.h"
+
 namespace simple_wisdom
 {
-	// загадка
+	// Определение дочернего класса - загадка
 	class riddle : public wisdom
 	{
 	public:
+		// Строка для хранения ответа
 		char answer[50];
-		// переопределяем интерфейс класса
-		int InData(ifstream& ifst); // ввод
-		void Out(ofstream& ofst); // вывод
-		riddle() {} // создание без инициализации.
+
+		// Переопределение интерфейса класса
+
+		// Ввод
+		int InData(ifstream& ifst);
+		
+		// Вывод
+		void Out(ofstream& ofst); 
+		
+		// Создание без инициализации
+		riddle() 
+		{
+		
+		} 
 	};
 }
 #endif

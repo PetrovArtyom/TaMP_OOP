@@ -1,24 +1,34 @@
 #include "container_atd.h"
 #include <iostream>
+
 namespace simple_wisdom 
 {
 	// Инициализация контейнера
-	container::container() : len(0) { }
-	// Очистка контейнера от элементов
-	void container::Clear() {
-		for (int i = 0; i < len; i++) {
+	container::container() : len(0) 
+	{
+
+	}
+
+	// Очистка контейнера от элементов (освобождение памяти)
+	void container::Clear() 
+	{
+		for (int i = 0; i < len; i++) 
+		{
 			delete cont[i];
 		}
 		len = 0;
 	}
 
-	// Ввод содержимого контейнера
+	// Ввод содержимого контейнера из указанного потока
 	int container::In(ifstream& ifst)
 	{
+		// Чтение пока не конец файла
 		while (!ifst.eof())
 		{
-			if (len < max_len)                         // если массив не переполнен
+			// Проверка на непереполнение массива элементов 
+			if (len < max_len)                         
 			{
+				// Проверка на успешный ввод
 				if ((cont[len] = wisdom::In(ifst)) != 0)
 				{
 					len++;
@@ -38,15 +48,28 @@ namespace simple_wisdom
 		return 0;
 	}
 
-	// Вывод содержимого контейнера
+	// Вывод содержимого контейнера в указанынй поток
 	void container::Out(ofstream& ofst)
 	{
 		ofst << "Количество элементов в контейнере: " << len << endl << endl;
 		cout << "Количество элементов в контейнере: " << len << endl << endl;
+		
 		for (int i = 0; i < len; i++)
 		{
 			cont[i]->Out(ofst);
 			ofst << "Знаков препинания: " << cont[i]->marks_number() << endl << endl;
+		}
+	}
+
+	// Фильтрованный вывод содержимого контейнера в указанынй поток
+	void container::Out_proverb(ofstream& ofst)
+	{
+		ofst << "Количество элементов в контейнере: " << len << endl << endl;
+		cout << "Количество элементов в контейнере: " << len << endl << endl;
+
+		for (int i = 0; i < len; i++)
+		{
+			cont[i]->Out_proverb(ofst);
 		}
 	}
 
@@ -66,17 +89,6 @@ namespace simple_wisdom
 					tmp = NULL;
 				}
 			}
-		}
-	}
-
-	// Фильтрованный вывод содержимого контейнера
-	void container::Out_proverb(ofstream& ofst)
-	{
-		ofst << "Количество элементов в контейнере: " << len << endl << endl;
-		cout << "Количество элементов в контейнере: " << len << endl << endl;
-		for (int i = 0; i < len; i++)
-		{
-			cont[i]->Out_proverb(ofst);
 		}
 	}
 }
