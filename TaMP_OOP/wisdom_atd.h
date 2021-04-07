@@ -16,6 +16,7 @@ namespace simple_wisdom
 		virtual void MultiMethod(wisdom* other, ofstream& ofst) = 0;	// Диспетчер
 		virtual void MM_Aphorism(ofstream& ofst) = 0;					// Функция вывода себя с афоризмом
 		virtual void MM_Proverb(ofstream& ofst) = 0;					// Функция вывода себя с пословицей
+		virtual void MM_Riddle(ofstream& ofst) = 0;						// Функция вывода себя с загадкой
 	};
 }
 #endif

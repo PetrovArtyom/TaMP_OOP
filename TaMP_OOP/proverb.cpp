@@ -25,6 +25,11 @@ namespace simple_wisdom
 		ofst << "Афоризм и Пословица" << endl;
 	}
 
+	void proverb::MM_Riddle(ofstream& ofst)
+	{
+		ofst << "Загадка и Пословица" << endl;
+	}
+
 	void proverb::MM_Proverb(ofstream& ofst)
 	{
 		ofst << "Пословица и Пословица" << endl;
