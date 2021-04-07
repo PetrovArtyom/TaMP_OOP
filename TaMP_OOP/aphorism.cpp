@@ -14,4 +14,19 @@ namespace simple_wisdom
 	{
 		ofst << "Афоризм: " << content << endl << "Автор: " << author << endl;
 	}
+
+	void aphorism::MultiMethod(wisdom* other, ofstream& ofst)
+	{
+		other->MM_Aphorism(ofst);
+	}
+
+	void aphorism::MM_Proverb(ofstream& ofst)
+	{
+		ofst << "Пословица и Афоризм" << endl;
+	}
+
+	void aphorism::MM_Aphorism(ofstream& ofst)
+	{
+		ofst << "Афоризм и Афоризм" << endl;
+	}
 }

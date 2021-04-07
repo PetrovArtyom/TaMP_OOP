@@ -42,4 +42,20 @@ namespace simple_wisdom {
 			cont[i]->Out(ofst);
 		}
 	}
+
+	void container::Write_pairs(ofstream& ofst)
+	{
+		ofst << endl << "MultiMethod" << endl << endl;
+
+		for (int i = 0; i < len - 1; i++)
+			for (int j = i + 1; j < len; j++)
+			{
+				cont[i]->Out(ofst);
+				ofst << endl;
+				cont[j]->Out(ofst);
+				ofst << endl;
+				cont[i]->MultiMethod(cont[j], ofst);
+				ofst << endl;
+			}
+	}
 }

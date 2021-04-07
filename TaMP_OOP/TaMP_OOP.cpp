@@ -12,8 +12,7 @@ int main(int argc, char* argv[])
 
 	if (argc != 3)
 	{
-		cout << "incorrect command line! "
-			"Waited: command in_file out_file"
+		cout << "incorrect command line! " << "Waited: command in_file out_file"
 			<< endl;
 		exit(1);
 	}
@@ -25,6 +24,7 @@ int main(int argc, char* argv[])
 	ofst << "Контейнер заполнен" << endl << endl;
 	cout << "Контейнер заполнен" << endl << endl;
 	c.Out(ofst);
+	c.Write_pairs(ofst);
 	c.Clear();
 	ofst << endl << "Контейнер пуст" << endl << endl;
 	cout << "Контейнер пуст" << endl << endl;

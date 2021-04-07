@@ -12,7 +12,10 @@ namespace simple_wisdom
 		// переопределяем интерфейс класса
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
-		proverb() {} // создание без инициализации.
+		proverb() {} // создание без инициализации
+		void MultiMethod(wisdom* other, ofstream& ofst);	// Диспетчер
+		void MM_Aphorism(ofstream& ofst);					// Функция вывода себя с афоризмом
+		void MM_Proverb(ofstream& ofst) ;					// Функция вывода себя с пословицей
 	};
 }
 #endif

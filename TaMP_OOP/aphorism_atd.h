@@ -13,6 +13,9 @@ namespace simple_wisdom
 		void InData(ifstream& ifst); // ввод
 		void Out(ofstream& ofst); // вывод
 		aphorism() {} // создание без инициализации.
+		void MultiMethod(wisdom* other, ofstream& ofst);	// Диспетчер
+		void MM_Aphorism(ofstream& ofst);					// Функция вывода себя с афоризмом
+		void MM_Proverb(ofstream& ofst);					// Функция вывода себя с пословицей
 	};
 }
 #endif
