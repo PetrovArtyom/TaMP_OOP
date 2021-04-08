@@ -15,7 +15,7 @@ namespace simple_wisdom
 		// Переопределение интерфейса класса
 
 		// Ввод
-		int InData(ifstream& ifst);
+		int In_data(ifstream& ifst);
 		
 		// Вывод
 		void Out(ofstream& ofst);

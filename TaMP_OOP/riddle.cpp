@@ -5,7 +5,7 @@ using namespace std;
 namespace simple_wisdom
 {
 	//Ввод параметров загадки из потока
-	int riddle::InData(ifstream& ifst)
+	int riddle::In_data(ifstream& ifst)
 	{
 		//Чтение строки
 		ifst.getline(answer, 50);

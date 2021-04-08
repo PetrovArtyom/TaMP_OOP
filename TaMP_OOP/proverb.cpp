@@ -5,7 +5,7 @@ using namespace std;
 namespace simple_wisdom
 {
 	// Ввод параметров пословицы из потока
-	int proverb::InData(ifstream& ifst)
+	int proverb::In_data(ifstream& ifst)
 	{
 		// Чтение строки
 		ifst.getline(country, 50);
@@ -29,6 +29,6 @@ namespace simple_wisdom
 	// Фильтрованный вывод пословицы в поток
 	void proverb::Out_proverb(ofstream& ofst)
 	{
-		ofst << "Страна: " << country << endl << "Пословица: " << content << endl << "Оценка: " << mark << endl << "Знаков препинания: " << marks_number() << endl << endl;
+		ofst << "Страна: " << country << endl << "Пословица: " << content << endl << "Оценка: " << mark << endl << "Знаков препинания: " << Marks_number() << endl << endl;
 	}
 }

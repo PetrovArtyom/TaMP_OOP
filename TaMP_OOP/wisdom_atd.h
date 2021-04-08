@@ -18,7 +18,7 @@ namespace simple_wisdom
 
 		// ќбъ€вление методов класса
 		static wisdom* In(ifstream& ifst);
-		virtual int InData(ifstream& ifst) = 0; 
+		virtual int In_data(ifstream& ifst) = 0; 
 		virtual void Out(ofstream& ofst); 
 		virtual void Out_proverb(ofstream& ofst);
 		bool Compare(wisdom* a);

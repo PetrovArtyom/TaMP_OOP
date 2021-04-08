@@ -57,7 +57,7 @@ namespace simple_wisdom
 		for (int i = 0; i < len; i++)
 		{
 			cont[i]->Out(ofst);
-			ofst << "Знаков препинания: " << cont[i]->marks_number() << endl << endl;
+			ofst << "Знаков препинания: " << cont[i]->Marks_number() << endl << endl;
 		}
 	}
 
@@ -81,7 +81,7 @@ namespace simple_wisdom
 
 			for (int j = i + 1; j < len; j++)
 			{
-				if (cont[i]->compare(cont[j]))
+				if (cont[i]->Compare(cont[j]))
 				{
 					wisdom* tmp = cont[i];
 					cont[i] = cont[j];

@@ -5,7 +5,7 @@ using namespace std;
 namespace simple_wisdom
 {
 	//Ввод параметров афоризма из потока
-	int aphorism::InData(ifstream& ifst)
+	int aphorism::In_data(ifstream& ifst)
 	{
 		// Чтение строки
 		ifst.getline(author, 50);

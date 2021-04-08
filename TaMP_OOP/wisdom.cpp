@@ -90,7 +90,7 @@ namespace simple_wisdom
 		wd->mark = mark;
 		
 		// Проверка успешности ввода индивидуального параметра
-		if (wd->InData(ifst) == 1)
+		if (wd->In_data(ifst) == 1)
 		{
 			return 0;
 		}
